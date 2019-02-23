@@ -135,7 +135,7 @@
 
   innodb存储引擎中，每行数据都包含了一些隐藏字段：DB_ROW_ID、DB_TRX_ID、DB_ROLL_PTR和DELETE_BIT。
 
-  ![数据库记录](/Users/qiuweisen/Downloads/数据库记录.png)
+  ![数据库记录](https://ws2.sinaimg.cn/large/006tKfTcly1g0g63qy6jaj30j2057gli.jpg)
 
   - DB_TRX_ID：用来标识最近一次对本行记录做修改的事务的标识符，即最后一次修改本行记录的事务id。delete操作在内部来看是一次update操作，更新行中的删除标识位DELELE_BIT。
   - DB_ROLL_PTR：指向当前数据的**undo log**记录，回滚数据通过这个指针来寻找记录被更新之前的内容信息。
@@ -183,7 +183,7 @@
 
   可以参考知乎这个答案来理解。low_limit_id应该是**当前系统尚未分配的下一个事务ID**，也就是**目前已经出现过的事务ID的最大值+1**。
 
-  ![image-20190203151446779](/Users/qiuweisen/Library/Application Support/typora-user-images/image-20190203151446779.png)
+  ![image-20190203151446779](https://ws2.sinaimg.cn/large/006tKfTcly1g0g640bup4j310q0pwwkw.jpg)
 
   #### 可见性判断
 
